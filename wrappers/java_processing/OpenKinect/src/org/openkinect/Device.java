@@ -67,14 +67,29 @@ public final class Device
     
     public void color(Image image)
     {
-        color(image, ColorFormat.RGB_8_8_8);
+    	color(image,false);
+    }
+    
+    public void color(Image image, boolean IR) {
+    	if (IR) {
+            color(image, ColorFormat.IR_10BIT);
+    	} else {
+            color(image, ColorFormat.RGB_8_8_8);
+    	}
+    	
     }
 
     public void color(Image image, ColorFormat format)
     {
         checkDisposed();
-
-        jniSetFormatRGB(format.ordinal());
+        
+        if (format == ColorFormat.IR_10BIT) {
+        	// HACK FIX THIS!!!
+        	jniSetFormatRGB(3);//format.ordinal());
+        } else {
+            jniSetFormatRGB(format.ordinal());
+        	
+        }
         rgb = image;
 
         if(rgb != null)

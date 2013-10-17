@@ -34,7 +34,7 @@
 
 struct Data
 {
-    freenect_pixel *rgb;
+    void *rgb;
     void *depth;
 
     Data() : rgb(0), depth(0) {}
@@ -55,7 +55,7 @@ void log_cb(freenect_context *context, freenect_loglevel level, const char *msg)
    logs.push_back(msg);
 }
 
-void rgb_cb(freenect_device *dev, freenect_pixel *rgb, uint32_t timestamp)
+void rgb_cb(freenect_device *dev, void *rgb, uint32_t timestamp)
 {
     data[dev].rgb = rgb;
 }
@@ -123,7 +123,7 @@ JNIEXPORT jboolean JNICALL Java_org_openkinect_Context_jniProcessEvents
 
         if(d.rgb)
         {
-            jobject buffer = env->NewDirectByteBuffer(d.rgb, FREENECT_RGB_SIZE);
+            jobject buffer = env->NewDirectByteBuffer(d.rgb, 2147483647);
 
             jobject device = jDevice(env, jContext, f_dev);
             jclass clazz = env->GetObjectClass(device);
@@ -135,7 +135,7 @@ JNIEXPORT jboolean JNICALL Java_org_openkinect_Context_jniProcessEvents
 
         if(d.depth)
         {
-            jobject buffer = env->NewDirectByteBuffer(d.depth, FREENECT_DEPTH_SIZE);
+            jobject buffer = env->NewDirectByteBuffer(d.depth, 2147483647);
 
             jobject device = jDevice(env, jContext, f_dev);
             jclass clazz = env->GetObjectClass(device);
@@ -146,8 +146,8 @@ JNIEXPORT jboolean JNICALL Java_org_openkinect_Context_jniProcessEvents
         }
 
         {
-			freenect_update_device_state(f_dev);
-			freenect_raw_device_state* f_dev_raw = freenect_get_device_state(f_dev);
+			freenect_update_tilt_state(f_dev);
+			freenect_raw_tilt_state* f_dev_raw = freenect_get_tilt_state(f_dev);
 
             double x, y, z;
             freenect_get_mks_accel(f_dev_raw, &x, &y, &z);
@@ -180,7 +180,7 @@ JNIEXPORT jlong JNICALL Java_org_openkinect_Context_jniOpenDevice
         return 0;
     }
 
-    freenect_set_rgb_callback(f_dev, rgb_cb);
+    freenect_set_video_callback(f_dev, rgb_cb);
     freenect_set_depth_callback(f_dev, depth_cb);
 
     return (jlong) f_dev;

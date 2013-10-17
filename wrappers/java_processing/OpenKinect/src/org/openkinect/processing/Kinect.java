@@ -6,7 +6,9 @@ import java.nio.ShortBuffer;
 
 import org.openkinect.Context;
 import org.openkinect.Device;
+import org.openkinect.Image;
 import org.openkinect.processing.RGBImage;
+import org.openkinect.processing.DepthImage;
 
 import processing.core.PApplet;
 import processing.core.PImage;
@@ -96,7 +98,7 @@ public class Kinect extends Thread {
 	public void enableIR(boolean b) {
 		device.color(null);
 		kimg.setIR(b);
-		if (b) device.color(kimg,true);
+		if (b) device.color((Image)kimg,true);
 		//else device.color(null);
 	}
 

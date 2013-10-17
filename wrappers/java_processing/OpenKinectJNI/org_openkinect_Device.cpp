@@ -62,14 +62,15 @@ JNIEXPORT void JNICALL Java_org_openkinect_Device_jniSetFormatRGB
   (JNIEnv *env, jobject obj, jint format)
 {
     freenect_device *f_dev = device(env, obj);
-    freenect_set_rgb_format(f_dev, (freenect_rgb_format) format);
+//    freenect_find_video_mode(FREENECT_RESOLUTION_MEDIUM, FREENECT_VIDEO_RGB)
+    freenect_set_video_mode(f_dev, (freenect_frame_mode) freenect_find_video_mode(FREENECT_RESOLUTION_MEDIUM, FREENECT_VIDEO_RGB));
 }
 
 JNIEXPORT void JNICALL Java_org_openkinect_Device_jniSetFormatDepth
   (JNIEnv *env, jobject obj, jint format)
 {
     freenect_device *f_dev = device(env, obj);
-    freenect_set_depth_format(f_dev, (freenect_depth_format) format);
+    freenect_set_depth_mode(f_dev, (freenect_frame_mode) freenect_find_depth_mode(FREENECT_RESOLUTION_MEDIUM, FREENECT_DEPTH_11BIT));
 }
 
 
@@ -77,7 +78,7 @@ JNIEXPORT void JNICALL Java_org_openkinect_Device_jniStartCaptureRGB
   (JNIEnv *env, jobject obj)
 {
     freenect_device *f_dev = device(env, obj);
-    freenect_start_rgb(f_dev);
+    freenect_start_video(f_dev);
 }
 
 JNIEXPORT void JNICALL Java_org_openkinect_Device_jniStartCaptureDepth
@@ -91,7 +92,7 @@ JNIEXPORT void JNICALL Java_org_openkinect_Device_jniStopCaptureRGB
 (JNIEnv *env, jobject obj)
 {
     freenect_device *f_dev = device(env, obj);
-    freenect_stop_rgb(f_dev);
+    freenect_stop_video(f_dev);
 }
 
 JNIEXPORT void JNICALL Java_org_openkinect_Device_jniStopCaptureDepth

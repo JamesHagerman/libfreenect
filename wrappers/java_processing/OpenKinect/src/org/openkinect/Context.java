@@ -40,7 +40,7 @@ public class Context
 
     static
     {
-        System.loadLibrary("OpenKinect");
+        System.loadLibrary("kinect");
     }
 
     public static Context getContext()

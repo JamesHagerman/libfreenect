@@ -33,4 +33,6 @@ public enum ColorFormat
 {
 	RGB_8_8_8,
 	BAYER,
+	IR_10BIT,
+	IR_8BIT
 }
