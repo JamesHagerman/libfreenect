@@ -28,23 +28,41 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
+
 #include <unistd.h>
 
 #include "freenect_internal.h"
+#include "registration.h"
+#include "cameras.h"
+#ifdef BUILD_AUDIO
+#include "loader.h"
+#endif
 
-int freenect_init(freenect_context **ctx, freenect_usb_context *usb_ctx)
+FREENECTAPI int freenect_init(freenect_context **ctx, freenect_usb_context *usb_ctx)
 {
-	*ctx = malloc(sizeof(freenect_context));
+	int res;
+
+	*ctx = (freenect_context*)malloc(sizeof(freenect_context));
 	if (!ctx)
 		return -1;
 
 	memset(*ctx, 0, sizeof(freenect_context));
 
 	(*ctx)->log_level = LL_WARNING;
-	return fnusb_init(&(*ctx)->usb, usb_ctx);
+	(*ctx)->enabled_subdevices = (freenect_device_flags)(FREENECT_DEVICE_MOTOR | FREENECT_DEVICE_CAMERA
+#ifdef BUILD_AUDIO
+			| FREENECT_DEVICE_AUDIO
+#endif
+			);
+	res = fnusb_init(&(*ctx)->usb, usb_ctx);
+	if (res < 0) {
+		free(*ctx);
+		*ctx = NULL;
+	}
+	return res;
 }
 
-int freenect_shutdown(freenect_context *ctx)
+FREENECTAPI int freenect_shutdown(freenect_context *ctx)
 {
 	while (ctx->first) {
 		FN_NOTICE("Device %p open during shutdown, closing...\n", ctx->first);
@@ -56,39 +74,88 @@ int freenect_shutdown(freenect_context *ctx)
 	return 0;
 }
 
-int freenect_process_events(freenect_context *ctx)
+FREENECTAPI int freenect_process_events(freenect_context *ctx)
 {
-	return fnusb_process_events(&ctx->usb);
+	struct timeval timeout;
+	timeout.tv_sec = 60;
+	timeout.tv_usec = 0;
+	return freenect_process_events_timeout(ctx, &timeout);
 }
 
-int freenect_num_devices(freenect_context *ctx)
+FREENECTAPI int freenect_process_events_timeout(freenect_context *ctx, struct timeval *timeout)
 {
-	libusb_device **devs; //pointer to pointer of device, used to retrieve a list of devices
-	ssize_t cnt = libusb_get_device_list (ctx->usb.ctx, &devs); //get the list of devices
-
-	if (cnt < 0)
-		return (-1);
-
-	int nr = 0, i = 0;
-	struct libusb_device_descriptor desc;
-	for (i = 0; i < cnt; ++i)
-	{
-		int r = libusb_get_device_descriptor (devs[i], &desc);
-		if (r < 0)
-			continue;
-		if (desc.idVendor == VID_MICROSOFT && desc.idProduct == PID_NUI_CAMERA)
-			nr++;
+	int res = fnusb_process_events_timeout(&ctx->usb, timeout);
+	// Iterate over the devices in ctx.  If any of them are flagged as
+	freenect_device* dev = ctx->first;
+	while(dev) {
+		if (dev->usb_cam.device_dead) {
+			FN_ERROR("USB camera marked dead, stopping streams\n");
+			res = -1;
+			freenect_stop_video(dev);
+			freenect_stop_depth(dev);
+		}
+#ifdef BUILD_AUDIO
+		if (dev->usb_audio.device_dead) {
+			FN_ERROR("USB audio marked dead, stopping streams\n");
+			res = -1; // Or something else to tell the user that the device just vanished.
+			freenect_stop_audio(dev);
+		}
+#endif
+		dev = dev->next;
 	}
-
-	libusb_free_device_list (devs, 1);  // free the list, unref the devices in it
-
-	return (nr);
+	return res;
 }
 
-int freenect_open_device(freenect_context *ctx, freenect_device **dev, int index)
+FREENECTAPI int freenect_num_devices(freenect_context *ctx)
+{
+	return fnusb_num_devices(&ctx->usb);
+}
+
+FREENECTAPI int freenect_list_device_attributes(freenect_context *ctx, struct freenect_device_attributes **attribute_list)
+{
+	return fnusb_list_device_attributes(&ctx->usb, attribute_list);
+}
+
+FREENECTAPI void freenect_free_device_attributes(struct freenect_device_attributes *attribute_list)
+{
+	// Iterate over list, freeing contents of each item as we go.
+	struct freenect_device_attributes* to_free;
+	while(attribute_list != NULL) {
+		to_free = attribute_list;
+		if (attribute_list->camera_serial != NULL) {
+			free((char*)attribute_list->camera_serial);
+			attribute_list->camera_serial = NULL;
+		}
+		attribute_list = attribute_list->next;
+		free(to_free);
+	}
+	return;
+}
+
+FREENECTAPI int freenect_supported_subdevices(void) {
+#ifdef BUILD_AUDIO
+	return FREENECT_DEVICE_MOTOR | FREENECT_DEVICE_CAMERA | FREENECT_DEVICE_AUDIO;
+#else
+	return FREENECT_DEVICE_MOTOR | FREENECT_DEVICE_CAMERA;
+#endif
+}
+
+FREENECTAPI void freenect_select_subdevices(freenect_context *ctx, freenect_device_flags subdevs) {
+	ctx->enabled_subdevices = (freenect_device_flags)(subdevs & (FREENECT_DEVICE_MOTOR | FREENECT_DEVICE_CAMERA
+#ifdef BUILD_AUDIO
+			| FREENECT_DEVICE_AUDIO
+#endif
+			));
+}
+
+FREENECTAPI freenect_device_flags freenect_enabled_subdevices(freenect_context *ctx) {
+	return ctx->enabled_subdevices;
+}
+
+FREENECTAPI int freenect_open_device(freenect_context *ctx, freenect_device **dev, int index)
 {
 	int res;
-	freenect_device *pdev = malloc(sizeof(freenect_device));
+	freenect_device *pdev = (freenect_device*)malloc(sizeof(freenect_device));
 	if (!pdev)
 		return -1;
 
@@ -97,7 +164,6 @@ int freenect_open_device(freenect_context *ctx, freenect_device **dev, int index
 	pdev->parent = ctx;
 
 	res = fnusb_open_subdevices(pdev, index);
-
 	if (res < 0) {
 		free(pdev);
 		return res;
@@ -113,17 +179,49 @@ int freenect_open_device(freenect_context *ctx, freenect_device **dev, int index
 	}
 
 	*dev = pdev;
+
+	// Do device-specific initialization
+	if (pdev->usb_cam.dev) {
+		if (freenect_camera_init(pdev) < 0) {
+			return -1;
+		}
+	}
+
 	return 0;
 }
 
-int freenect_close_device(freenect_device *dev)
+FREENECTAPI int freenect_open_device_by_camera_serial(freenect_context *ctx, freenect_device **dev, const char* camera_serial)
+{
+	// This is implemented by listing the devices and seeing which index (if
+	// any) has a camera with a matching serial number, and then punting to
+	// freenect_open_device with that index.
+	struct freenect_device_attributes* attrlist;
+	struct freenect_device_attributes* item;
+	int count = fnusb_list_device_attributes(&ctx->usb, &attrlist);
+	if (count < 0) {
+		FN_ERROR("freenect_open_device_by_camera_serial: Couldn't enumerate serial numbers\n");
+		return -1;
+	}
+	int index = 0;
+	for(item = attrlist ; item != NULL; item = item->next , index++) {
+		if (strlen(item->camera_serial) == strlen(camera_serial) && strcmp(item->camera_serial, camera_serial) == 0) {
+			freenect_free_device_attributes(attrlist);
+			return freenect_open_device(ctx, dev, index);
+		}
+	}
+	freenect_free_device_attributes(attrlist);
+	FN_ERROR("freenect_open_device_by_camera_serial: Couldn't find a device with serial %s\n", camera_serial);
+	return -1;
+}
+
+FREENECTAPI int freenect_close_device(freenect_device *dev)
 {
 	freenect_context *ctx = dev->parent;
 	int res;
 
-	// stop streams, if active
-	freenect_stop_depth(dev);
-	freenect_stop_rgb(dev);
+	if (dev->usb_cam.dev) {
+		freenect_camera_teardown(dev);
+	}
 
 	res = fnusb_close_subdevices(dev);
 	if (res < 0) {
@@ -153,27 +251,27 @@ int freenect_close_device(freenect_device *dev)
 	return 0;
 }
 
-void freenect_set_user(freenect_device *dev, void *user)
+FREENECTAPI void freenect_set_user(freenect_device *dev, void *user)
 {
 	dev->user_data = user;
 }
 
-void *freenect_get_user(freenect_device *dev)
+FREENECTAPI void *freenect_get_user(freenect_device *dev)
 {
 	return dev->user_data;
 }
 
-void freenect_set_log_level(freenect_context *ctx, freenect_loglevel level)
+FREENECTAPI void freenect_set_log_level(freenect_context *ctx, freenect_loglevel level)
 {
 	ctx->log_level = level;
 }
 
-void freenect_set_log_callback(freenect_context *ctx, freenect_log_cb cb)
+FREENECTAPI void freenect_set_log_callback(freenect_context *ctx, freenect_log_cb cb)
 {
 	ctx->log_cb = cb;
 }
 
-void fn_log(freenect_context *ctx, freenect_loglevel level, const char *fmt, ...)
+FN_INTERNAL void fn_log(freenect_context *ctx, freenect_loglevel level, const char *fmt, ...)
 {
 	va_list ap;
 
@@ -194,33 +292,4 @@ void fn_log(freenect_context *ctx, freenect_loglevel level, const char *fmt, ...
 		vfprintf(stderr, fmt, ap);
 		va_end(ap);
 	}
-}
-
-freenect_raw_device_state* freenect_get_device_state(freenect_device *dev)
-{
-	return &dev->raw_state;
-}
-
-int freenect_update_device_state(freenect_device *dev)
-{
-	freenect_context *ctx = dev->parent;
-	uint8_t buf[10];
-	uint16_t ux, uy, uz;
-	int ret = fnusb_control(&dev->usb_motor, 0xC0, 0x32, 0x0, 0x0, buf, 10);
-	if (ret != 10) {
-		FN_ERROR("Error in accelerometer reading, libusb_control_transfer returned %d\n", ret);
-		return ret < 0 ? ret : -1;
-	}
-	
-	ux = ((uint16_t)buf[2] << 8) | buf[3];
-	uy = ((uint16_t)buf[4] << 8) | buf[5];
-	uz = ((uint16_t)buf[6] << 8) | buf[7];
-	
-	dev->raw_state.accelerometer_x = (int16_t)ux;
-	dev->raw_state.accelerometer_y = (int16_t)uy;
-	dev->raw_state.accelerometer_z = (int16_t)uz;
-	dev->raw_state.tilt_angle = (int8_t)buf[8];
-	dev->raw_state.tilt_status = buf[9];
-	
-	return ret;
 }

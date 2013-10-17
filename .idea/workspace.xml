@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="881df284-c625-4bfa-8c8a-283c023c0ebe" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/kinect_protocol.asciidoc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/libfreenect.hpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platform/osx/homebrew/libfreenect.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platform/osx/homebrew/libusb-freenect.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platform/osx/libusb-osx-kinect.diff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/accel.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/actionscript/org/libfreenect/events/libfreenectCameraEvent.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/actionscript/org/libfreenect/events/libfreenectDataEvent.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/actionscript/org/libfreenect/events/libfreenectMicEvent.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/actionscript/org/libfreenect/events/libfreenectMotorEvent.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/actionscript/org/libfreenect/events/libfreenectSocketEvent.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/actionscript/org/libfreenect/libfreenect.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/actionscript/org/libfreenect/libfreenectCamera.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/actionscript/org/libfreenect/libfreenectData.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/actionscript/org/libfreenect/libfreenectMic.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/actionscript/org/libfreenect/libfreenectMotor.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/actionscript/org/libfreenect/libfreenectSocket.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/actionscript/test_depth.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/actionscript/test_rgb.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/csharp/OpenKinect.sln" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/csharp/OpenKinect/KinectLEDStatus.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/csharp/OpenKinect/KinectMotor.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/csharp/OpenKinect/OpenKinect.csproj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/csharp/OpenKinect/Properties/AssemblyInfo.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/csharp/OpenKinectConsole/OpenKinectConsole.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/csharp/OpenKinectConsole/OpenKinectConsole.csproj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/csharp/OpenKinectConsole/Properties/AssemblyInfo.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/csharp/external/LibUsbDotNet.dll" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/OpenKinect/src/Example.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/OpenKinect/src/org/openkinect/Acceleration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/OpenKinect/src/org/openkinect/ColorFormat.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/OpenKinect/src/org/openkinect/Context.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/OpenKinect/src/org/openkinect/DepthFormat.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/OpenKinect/src/org/openkinect/Device.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/OpenKinect/src/org/openkinect/Image.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/OpenKinect/src/org/openkinect/LEDStatus.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/OpenKinect/src/org/openkinect/LogLevel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/OpenKinect/src/org/openkinect/Logger.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/OpenKinectJNI/.dep.inc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/OpenKinectJNI/org_openkinect_Context.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/OpenKinectJNI/org_openkinect_Context.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/OpenKinectJNI/org_openkinect_Device.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/OpenKinectJNI/org_openkinect_Device.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/build.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/OpenKinect.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/allclasses-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/allclasses-noframe.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/constant-values.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/deprecated-list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/help-doc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/index-all.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/org/openkinect/Acceleration.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/org/openkinect/ColorFormat.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/org/openkinect/Context.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/org/openkinect/DepthFormat.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/org/openkinect/Device.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/org/openkinect/Image.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/org/openkinect/LEDStatus.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/org/openkinect/LogLevel.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/org/openkinect/Logger.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/org/openkinect/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/org/openkinect/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/org/openkinect/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/overview-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/package-list" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/resources/inherit.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/javadoc/stylesheet.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/dist/libOpenKinect.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/KinectJNI.xcodeproj/daniel.mode1v3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/KinectJNI.xcodeproj/daniel.pbxuser" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/KinectJNI.xcodeproj/default.pbxuser" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/KinectJNI.xcodeproj/itpstudent.mode1v3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/KinectJNI.xcodeproj/itpstudent.pbxuser" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/KinectJNI.xcodeproj/project.pbxproj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/lib/eawt-stubs.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/make/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/make/find-classrefs.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/resources/English.lproj/Credits.rtf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/resources/English.lproj/InfoPlist.strings" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/resources/Info.plist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/resources/Manifest" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/Example.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/java/shiffman/kinect/KinectJNI.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/java/shiffman/kinect/NativeAddressBook.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/java/shiffman/kinect/NativeKinect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/libfreenect/cameras.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/libfreenect/core.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/libfreenect/freenect_internal.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/libfreenect/libfreenect.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/libfreenect/libfreenect.hpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/libfreenect/libfreenect.pc.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/libfreenect/tilt.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/libfreenect/usb_libusb10.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/libfreenect/usb_libusb10.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/libusb/osx/include/libusb-1.0/libusb.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/libusb/osx/libs/usb-1.0.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/native/NativeAddressBook.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/native/NativeAddressBook.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/native/NativeKinect.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/native/NativeKinect.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/native/native-1.moved-aside/NativeKinect.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/native/org_openkinect_Context.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/native/org_openkinect_Context.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/native/org_openkinect_Device.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/native/org_openkinect_Device.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/org/openkinect/Acceleration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/org/openkinect/ColorFormat.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/org/openkinect/Context.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/org/openkinect/DepthFormat.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/org/openkinect/Device.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/org/openkinect/Image.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/org/openkinect/LEDStatus.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/org/openkinect/LogLevel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectJNI_v0002/src/org/openkinect/Logger.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/.classpath" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/.project" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/.settings/PROJECT_PREFS_NODE.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/data/kinectThreshold.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/AddressBook.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/OpenKinect.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/core/ant-launcher.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/core/ant.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/core/core.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/core/libquaqua.jnilib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/core/libquaqua64.jnilib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/core/revisions.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/export.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/gluegen-rt-natives-linux-amd64.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/gluegen-rt-natives-linux-i586.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/gluegen-rt-natives-macosx-ppc.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/gluegen-rt-natives-macosx-universal.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/gluegen-rt-natives-windows-amd64.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/gluegen-rt-natives-windows-i586.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/gluegen-rt.dll" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/gluegen-rt.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/gluegen-rt.jar.pack.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/jogl-natives-linux-amd64.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/jogl-natives-linux-i586.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/jogl-natives-macosx-ppc.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/jogl-natives-macosx-universal.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/jogl-natives-windows-amd64.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/jogl-natives-windows-i586.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/jogl.dll" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/jogl.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/jogl.jar.pack.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/jogl_awt.dll" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/jogl_cg.dll" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/libgluegen-rt.jnilib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/libgluegen-rt.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/libjogl.jnilib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/libjogl.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/libjogl_awt.jnilib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/libjogl_awt.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/libjogl_cg.jnilib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/libjogl_cg.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/base/opengl/opengl.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/lib/libKinect.jnilib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/librarytests/FancyDepthImage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/librarytests/KinectTracker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/librarytests/KinectTrackingTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/librarytests/Kinecting.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/librarytests/PointCloud.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/org/openkinect/Acceleration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/org/openkinect/ColorFormat.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/org/openkinect/Context.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/org/openkinect/DepthFormat.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/org/openkinect/Device.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/org/openkinect/Image.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/org/openkinect/LEDStatus.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/org/openkinect/LogLevel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/org/openkinect/Logger.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/org/openkinect/processing/DepthImage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/org/openkinect/processing/Kinect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/KinectProcessing/src/org/openkinect/processing/RGBImage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/distribution/openkinect.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/distribution/openkinect/examples/AveragePointTracking/AveragePointTracking.pde" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/distribution/openkinect/examples/AveragePointTracking/KinectTracker.pde" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/distribution/openkinect/examples/DepthThreshold/DepthThreshold.pde" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/distribution/openkinect/examples/PointCloud/PointCloud.pde" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/distribution/openkinect/examples/RGBDepthTest/RGBDepthTest.pde" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/distribution/openkinect/library/libKinect.jnilib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/java/processing/distribution/openkinect/library/openkinect.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/python/demo_ipython.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wrappers/python/demo_kill_async.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platform/linux/udev/51-kinect.rules" afterPath="$PROJECT_DIR$/platform/linux/udev/51-kinect.rules" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/CMakeLists.txt" afterPath="$PROJECT_DIR$/examples/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fakenect/CMakeLists.txt" afterPath="$PROJECT_DIR$/fakenect/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMakeLists.txt" afterPath="$PROJECT_DIR$/src/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrappers/actionscript/CMakeLists.txt" afterPath="$PROJECT_DIR$/wrappers/actionscript/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrappers/c_sync/CMakeLists.txt" afterPath="$PROJECT_DIR$/wrappers/c_sync/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake_modules/Findlibusb-1.0.cmake" afterPath="$PROJECT_DIR$/cmake_modules/Findlibusb-1.0.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HACKING" afterPath="$PROJECT_DIR$/HACKING" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.asciidoc" afterPath="$PROJECT_DIR$/README.asciidoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fakenect/README" afterPath="$PROJECT_DIR$/fakenect/README" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrappers/python/README" afterPath="$PROJECT_DIR$/wrappers/python/README" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrappers/actionscript/server/as3-server.c" afterPath="$PROJECT_DIR$/wrappers/actionscript/server/as3-server.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cameras.c" afterPath="$PROJECT_DIR$/src/cameras.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core.c" afterPath="$PROJECT_DIR$/src/core.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrappers/python/demo_cv_async.py" afterPath="$PROJECT_DIR$/wrappers/python/demo_cv_async.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrappers/python/demo_cv_sync.py" afterPath="$PROJECT_DIR$/wrappers/python/demo_cv_sync.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrappers/python/demo_mp_async.py" afterPath="$PROJECT_DIR$/wrappers/python/demo_mp_async.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrappers/python/demo_mp_sync.py" afterPath="$PROJECT_DIR$/wrappers/python/demo_mp_sync.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrappers/python/demo_tilt.py" afterPath="$PROJECT_DIR$/wrappers/python/demo_tilt.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fakenect/fakenect.c" afterPath="$PROJECT_DIR$/fakenect/fakenect.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrappers/python/freenect.pyx" afterPath="$PROJECT_DIR$/wrappers/python/freenect.pyx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/freenect_internal.h" afterPath="$PROJECT_DIR$/src/freenect_internal.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/glview.c" afterPath="$PROJECT_DIR$/examples/glview.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/libfreenect.h" afterPath="$PROJECT_DIR$/include/libfreenect.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/libfreenect.pc.in" afterPath="$PROJECT_DIR$/src/libfreenect.pc.in" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrappers/c_sync/libfreenect_sync.c" afterPath="$PROJECT_DIR$/wrappers/c_sync/libfreenect_sync.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrappers/c_sync/libfreenect_sync.h" afterPath="$PROJECT_DIR$/wrappers/c_sync/libfreenect_sync.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fakenect/record.c" afterPath="$PROJECT_DIR$/fakenect/record.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrappers/python/setup.py" afterPath="$PROJECT_DIR$/wrappers/python/setup.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tilt.c" afterPath="$PROJECT_DIR$/src/tilt.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/usb_libusb10.c" afterPath="$PROJECT_DIR$/src/usb_libusb10.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/usb_libusb10.h" afterPath="$PROJECT_DIR$/src/usb_libusb10.h" />
+    </list>
+    <ignored path="libfreenect.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/Dummy.txt" changelist="881df284-c625-4bfa-8c8a-283c023c0ebe" time="1382049806919" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="libfreenect" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="org_openkinect_Context.cpp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wrappers/java_processing/OpenKinectJNI/org_openkinect_Context.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="55" selection-start="1139" selection-end="1139" vertical-scroll-proportion="0.53928095">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="22" />
+    <option name="width" value="1440" />
+    <option name="height" value="874" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libfreenect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libfreenect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libfreenect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libfreenect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libfreenect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wrappers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libfreenect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libfreenect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wrappers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java_processing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libfreenect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libfreenect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wrappers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java_processing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OpenKinectJNI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libfreenect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libfreenect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wrappers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java_processing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OpenKinect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="881df284-c625-4bfa-8c8a-283c023c0ebe" name="Default" comment="" />
+      <created>1382049806305</created>
+      <updated>1382049806305</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="22" width="1440" height="874" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964131" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/wrappers/java_processing/OpenKinectJNI/org_openkinect_Context.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="55" selection-start="1139" selection-end="1139" vertical-scroll-proportion="0.53928095">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

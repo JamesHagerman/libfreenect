@@ -41,25 +41,25 @@ cmake_minimum_required(VERSION 2.6)
 PROJECT(libfreenect)
 
 set (PROJECT_VER_MAJOR 0)
-set (PROJECT_VER_MINOR 0)
-set (PROJECT_VER_PATCH 1)
+set (PROJECT_VER_MINOR 2)
+set (PROJECT_VER_PATCH 0)
 set (PROJECT_VER 
   "${PROJECT_VER_MAJOR}.${PROJECT_VER_MINOR}.${PROJECT_VER_PATCH}")
 set (PROJECT_APIVER 
   "${PROJECT_VER_MAJOR}.${PROJECT_VER_MINOR}")
 
+OPTION(BUILD_AUDIO "Build audio support" OFF)
+OPTION(BUILD_REDIST_PACKAGE "Build libfreenect in a legally-redistributable manner (only affects audio)" OFF)
 OPTION(BUILD_EXAMPLES "Build example programs" ON)
 OPTION(BUILD_FAKENECT "Build fakenect mock library" ON)
 OPTION(BUILD_C_SYNC "Build c synchronous library" ON)
+OPTION(BUILD_CPP "Build C++ Library (currently header only)" ON)
+OPTION(BUILD_CV "Build OpenCV wrapper" OFF)
 OPTION(BUILD_AS3_SERVER "Build the Actionscript 3 Server Example" OFF)
+OPTION(BUILD_PYTHON "Build Python extension" OFF)
 IF(PROJECT_OS_LINUX)
 	OPTION(BUILD_CPACK "Build an RPM or DEB using CPack" OFF)
 ENDIF(PROJECT_OS_LINUX)
-
-# Doesn't work on windows yet.
-IF(NOT UNIX)
-  MESSAGE(FATAL_ERROR "libfreenect is not currently supported on this platform")
-ENDIF()
 
 ######################################################################################
 # CMake Modules
@@ -75,6 +75,23 @@ include (SetupDirectories)
 # Find packages needed to build library
 find_package(libusb-1.0 REQUIRED)
 
+# Check the endianness of the system
+include (TestBigEndian)
+test_big_endian(BIG_ENDIAN)
+if(BIG_ENDIAN)
+  add_definitions(-DFN_BIGENDIAN)
+endif()
+
+if(BUILD_AUDIO)
+  add_definitions(-DBUILD_AUDIO)
+endif()
+
+if (WIN32)
+   set(MATH_LIB "")
+else(WIN32)
+  set(MATH_LIB "m")
+endif()
+
 ######################################################################################
 # CMake 
 ######################################################################################
@@ -83,11 +100,26 @@ SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
 SET(DOC_OUTPUT_PATH ${CMAKE_BINARY_DIR}/doc)
 
+# let CFLAGS env override this
+if(CMAKE_C_FLAGS STREQUAL "")
+  set(CMAKE_C_FLAGS "-O2")
+endif()
+SET(CMAKE_C_FLAGS_DEBUG "-g -DDEBUG=1")
+SET(CMAKE_C_FLAGS_RELEASE "-O2")
+SET(CMAKE_C_FLAGS_RELWITHDEBINFO "-O2 -g")
+
+add_definitions(-Wall)
+
 # Pretty much everyone is going to need the main includes
 include_directories (${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # libfreenect.h includes libusb.h, so everyone needs this too
 include_directories(${LIBUSB_1_INCLUDE_DIRS})
+
+if(WIN32)
+  include_directories("${CMAKE_CURRENT_SOURCE_DIR}/platform/windows")
+  include_directories("${CMAKE_CURRENT_SOURCE_DIR}/platform/windows/libusb10emu/libusb-1.0")
+endif()
 
 # Add library project
 add_subdirectory (src)
@@ -105,8 +137,20 @@ IF(BUILD_C_SYNC)
   add_subdirectory (wrappers/c_sync)
 ENDIF()
 
+IF(BUILD_CPP)
+  add_subdirectory (wrappers/cpp)
+ENDIF()
+
+IF(BUILD_CV)
+  add_subdirectory (wrappers/opencv)
+ENDIF()
+
 IF(BUILD_AS3_SERVER)
   add_subdirectory(wrappers/actionscript)
+ENDIF()
+
+IF(BUILD_PYTHON)
+  add_subdirectory (wrappers/python)
 ENDIF()
 
 ######################################################################################
@@ -144,11 +188,14 @@ IF ( BUILD_CPACK )
   include(CPack)
 
   INSTALL(FILES "${CMAKE_BINARY_DIR}/lib/libfreenect.a" DESTINATION ${PROJECT_LIBRARY_INSTALL_DIR})
+  if (BUILD_AUDIO)
+    INSTALL(FILES "include/libfreenect-audio.h" DESTINATION ${PROJECT_INCLUDE_INSTALL_DIR})
+  endif()
   INSTALL(FILES "include/libfreenect.h" DESTINATION ${PROJECT_INCLUDE_INSTALL_DIR})
+  INSTALL(FILES "include/libfreenect-registration.h" DESTINATION ${PROJECT_INCLUDE_INSTALL_DIR})
   INSTALL(FILES "APACHE20" DESTINATION "share/doc/${CPACK_PACKAGE_NAME}")
   INSTALL(FILES "GPL2" DESTINATION "share/doc/${CPACK_PACKAGE_NAME}")
   INSTALL(FILES "README.asciidoc" DESTINATION "share/doc/${CPACK_PACKAGE_NAME}")
-  INSTALL(FILES "doc/kinect_protocol.asciidoc" DESTINATION "share/doc/${CPACK_PACKAGE_NAME}")
 
 ENDIF ( BUILD_CPACK )
 

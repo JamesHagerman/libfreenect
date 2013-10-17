@@ -1,14 +1,23 @@
 #!/usr/bin/env python
 import freenect
 import cv
-import numpy as np
+import frame_convert
 
 cv.NamedWindow('Depth')
-cv.NamedWindow('RGB')
+cv.NamedWindow('Video')
+print('Press ESC in window to stop')
+
+
+def get_depth():
+    return frame_convert.pretty_depth_cv(freenect.sync_get_depth()[0])
+
+
+def get_video():
+    return frame_convert.video_cv(freenect.sync_get_video()[0])
+
 
 while 1:
-    depth, timestamp = freenect.sync_get_depth()
-    rgb, timestamp = freenect.sync_get_rgb()
-    cv.ShowImage('Depth', depth.astype(np.uint8))
-    cv.ShowImage('RGB', rgb.astype(np.uint8))
-    cv.WaitKey(10)
+    cv.ShowImage('Depth', get_depth())
+    cv.ShowImage('Video', get_video())
+    if cv.WaitKey(10) == 27:
+        break
