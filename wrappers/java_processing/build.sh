@@ -4,6 +4,13 @@ LIBUSB_INCLUDE=-I/usr/include/libusb-1.0
 LIBUSB_LIBRARY=-lusb-1.0
 
 LIBFREENET_INCLUDE=-I../../include/
+
+# This library file is the ACTUAL libfreenect library. It is built using CMake and make. It is required to build the
+# Processing Kinect library by David Shiffman:
+# To build this library:
+# cd libfreenect; mkdir build; cd build; cmake ..; make; sudo make install;
+#
+# Actually, that make install isn't really needed because the next line references the compiled .a file directly:
 LIBFREENET_LIBRARY=../../build/lib/libfreenect.a
 
 # -- try to use installed as fallback
